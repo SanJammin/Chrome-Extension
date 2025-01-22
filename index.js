@@ -6,12 +6,16 @@ const ulEl = document.getElementById("ul-el");
 
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value);
+    renderLeads();
 });
 
-let listItems = "";
+function renderLeads() {
+    let listItems = "";
 
-for (let i = 0; i < myLeads.length; i++){
-    listItems += "<li>" + myLeads[i] + "</li>";
-};
+    for (let i = 0; i < myLeads.length; i++){
+        listItems += "<li>" + myLeads[i] + "</li>";
+    };
+    
+    ulEl.innerHTML = listItems;
+}
 
-ulEl.innerHTML = listItems;
